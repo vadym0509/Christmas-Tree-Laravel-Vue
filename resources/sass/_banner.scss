@@ -1,0 +1,71 @@
+.banner {
+    position: relative;
+    height: 380px;
+    overflow: hidden;
+
+    &_img {
+        position: absolute;
+        min-width: 100%;
+        top: 50%;
+        transform: translate(0%, -50%);
+    }
+
+    &_content {
+        position: absolute;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(35, 31, 32, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &_body, &_icon {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            img {
+                margin-bottom: 15px;
+            }
+
+            p {
+                font-family: 'Taviraj-Regular', sans-serif;
+                color: rgb(255, 255, 255);
+            }
+        }
+
+        &_icon {
+            font-size: 30px;
+            line-height: 36px;
+            margin: 0 0 50px;
+        }
+
+        &_body {
+            padding: 0 10px;
+            max-width: 440px;
+            font-size: 22px;
+            text-align: center;
+            line-height: 26px;
+
+            &_button {
+                background-color: rgb(177, 30, 42);
+                color: rgb(255, 255, 255);
+
+                &.ff-theme {
+                    background-color: rgba(27, 53, 61, 1);
+
+                    &:hover {
+                        background-color: darken(rgb(27, 53, 61), 10%);
+                    }
+                }
+
+                &:hover {
+                    color: rgb(255, 255, 255);
+                    background-color: darken(rgb(177, 30, 42), 10%);
+                }
+            }
+        }
+    }
+}

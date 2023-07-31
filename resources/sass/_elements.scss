@@ -1,0 +1,42 @@
+.input-default {
+    width: 100%;
+    box-sizing: border-box;
+    outline: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    border-image: initial;
+    padding: 0.75em;
+    margin: 0;
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    background-color: white;
+    cursor: text;
+    font: 400 14px Arial;
+
+    &.invalid {
+        border-color: red;
+    }
+}
+
+.text_button {
+    all: unset;
+}
+
+.cta {
+    &.disable {
+        background-color: #747474;
+        color: #999;
+        &:hover, &:focus, &:active {
+            background-color: #747474;
+            color: #999;
+        }
+    }
+}

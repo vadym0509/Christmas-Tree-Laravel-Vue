@@ -1,0 +1,30 @@
+// Variables
+@import 'variables';
+
+// Fonts
+//@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+// style
+@import 'fonts';
+@import 'elements';
+@import 'main';
+@import 'page-divider';
+@import 'product';
+@import 'header';
+@import 'footer';
+@import 'banner';
+@import 'promo';
+@import 'collection';
+@import 'about';
+@import 'cart';
+@import 'login';
+@import "info-block";
+@import "steps-form";
+@import "~toastr/toastr";

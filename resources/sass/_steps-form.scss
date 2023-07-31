@@ -1,0 +1,123 @@
+$main-color: #9ba7a7;
+$title-color: #000;
+
+.steps-form {
+    font-family: "Taviraj-Regular", sans-serif;
+    color: $main-color;
+    line-height: 1.5em;
+
+    &__head {
+        display: flex;
+        justify-content: center;
+        padding: 30px 0;
+
+        &-item {
+            font-size: 22px;
+            margin: 0;
+            padding: 6px 20px;
+
+            &.active {
+                color: #000;
+            }
+        }
+    }
+
+    &__body {
+        width: 100%;
+        background: #fff;
+        padding: 2.25em;
+
+        &-title {
+            font-size: 20px;
+            margin: 0 0 20px 0;
+            padding-bottom: 5px;
+            border-bottom: 1px solid $main-color;
+            color: $title-color;
+        }
+    }
+}
+
+.steps-form-payment {
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__title {
+        color: $title-color;
+        margin: 20px 0;
+    }
+    &__images {
+        display: flex;
+        justify-content: flex-end;
+        img {
+            display: inline-block;
+            height: 25px;
+            margin: 0 4px;
+        }
+    }
+}
+
+.credit-card {
+    width: 100%;
+    box-sizing: border-box;
+    outline: 0;
+    border: 1px solid rgb(204, 204, 204);
+    padding: 0.75em;
+    margin: 0;
+    display: flex;
+    text-align: start;
+    background-color: white;
+    cursor: text;
+    font: 400 14px Arial;
+    &__number {
+        width: 200px;
+        margin-right: calc(100% - 300px);
+    }
+    &__date {
+        width: 60px;
+    }
+    &__cvc {
+        width: 40px;
+    }
+    input {
+        border: transparent;
+        outline: none;
+    }
+}
+
+.mt-order-details {
+    margin-top: 96px;
+}
+
+@media screen and (max-width: 600px) {
+    .steps-form-payment {
+        &__head {
+            display: flex;
+            flex-direction: column;
+        }
+        &__images {
+            display: none;
+        }
+    }
+    .credit-card {
+        flex-direction: column;
+        border: none;
+
+        &__number {
+            width: 100%;
+            margin-right: 0;
+        }
+        &__cvc , &__date {
+            width: 100%;
+        }
+
+        input {
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(204, 204, 204);
+            padding: 0.75em;
+            margin: 0 0 15px 0;
+        }
+    }
+}

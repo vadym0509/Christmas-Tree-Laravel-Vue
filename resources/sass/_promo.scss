@@ -1,0 +1,116 @@
+.promo {
+    padding-bottom: 30px;
+
+    &_item {
+        display: flex;
+
+        &:nth-child(even) {
+
+            .promo_item_body {
+                background-color: rgba(27, 53, 61, 1);
+
+                &:hover {
+                    background-color: darken(rgba(27, 53, 61, 1), 5%);
+                }
+
+                p {
+                    color: #fff;
+                }
+
+                a {
+                    color: rgba(27, 53, 61, 1);
+                    background-color: #edece7;
+
+                    &:hover {
+                        background-color: darken(#edece7, 5%);
+                    }
+                }
+            }
+        }
+
+        &_img {
+            width: 50%;
+            position: relative;
+            overflow: hidden;
+            height: 380px;
+
+            img {
+                position: absolute;
+                min-width: 100%;
+                top: 50%;
+                transform: translate(0%, -50%);
+            }
+        }
+        
+        &_body {
+            height: 380px;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: rgb(177, 30, 42);
+
+            &:hover {
+                background-color: darken(rgb(177, 30, 42), 5%);
+            }
+
+            &.ff-theme {
+                background-color: #edece7;
+
+                p {
+                    color: rgba(27, 53, 61, 1);
+                }
+
+                a {
+                    color: #fff;
+                    background-color: rgba(27, 53, 61, 1);
+
+                    &:hover {
+                        background-color: darken(rgba(27, 53, 61, 1), 5%);
+                    }
+                }
+            }
+
+            p {
+                max-width: 440px;
+                padding: 0 10px;
+                font-family: 'Taviraj-Italic', sans-serif;
+                font-size: 24px;
+                color: rgba(255, 255, 255, 1);
+                text-align: center;
+                line-height: 36px;
+
+                &.title {
+                    font-family: 'Taviraj-Regular', sans-serif;
+                    font-size: 30px;
+                }
+
+                ::i-block-chrome, &.title {
+                    padding-top: 35px;
+                }
+
+            }
+
+            a {
+                margin-top: 35px;
+            }
+        }
+
+        ::i-block-chrome, &_body {
+            text-align: center;
+        }
+
+        @media screen and (max-width: 767px) {
+            display: block;
+
+            &_body, &_img {
+                width: 100%;
+            }
+        }
+    }
+}
+::i-block-chrome, .promo>.promo_item {
+    display: -webkit-box;
+}
+

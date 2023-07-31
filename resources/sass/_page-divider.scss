@@ -1,0 +1,13 @@
+.page-divider {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    & > hr {
+        width: 40%
+    }
+
+    & > img {
+        height: 40px;
+    }
+}

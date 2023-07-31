@@ -1,0 +1,72 @@
+clone:
+  git:
+    image: plugins/git
+    tags: true
+pipeline:
+  # STAGING BUILD
+  push-latest-image:
+    image: plugins/gcr
+    repo: erskine-io/sb-kt-website
+    secrets: [ google_credentials, hone_ssh_key, hone_auth_key ]
+    build_args_from_env:
+      - HONE_SSH_KEY
+      - HONE_AUTH_KEY
+    tags:
+      - latest
+    when:
+      event: push
+
+
+  deploy-to-staging:
+    image: peloton/drone-rancher
+    url: http://rancher.erskine.io
+    service: sb-kt-staging/website
+    docker_image: gcr.io/erskine-io/sb-kt-website:latest
+    confirm: true
+    timeout: 180
+    secrets:
+      - source: staging_rancher_access_key
+        target: rancher_access_key
+      - source: staging_rancher_secret_key
+        target: rancher_secret_key
+    when:
+      event: push
+    # --------------
+
+    # PRODUCTION BUILD
+  push-image-with-tags:
+    image: plugins/gcr
+    repo: erskine-io/sb-kt-website
+    secrets: [ google_credentials, hone_ssh_key, hone_auth_key ]
+    build_args_from_env:
+      - HONE_SSH_KEY
+      - HONE_AUTH_KEY
+    tags:
+      - latest
+      - ${DRONE_TAG}
+    when:
+      event: tag
+
+  deploy-to-production:
+    image: peloton/drone-rancher
+    url: http://rancher.erskine.io
+    service: sb-kt/sb-kt-website
+    docker_image: 'gcr.io/erskine-io/sb-kt-website:${DRONE_TAG}'
+    confirm: true
+    timeout: 180
+    secrets:
+      - source: staging_rancher_access_key
+        target: rancher_access_key
+      - source: staging_rancher_secret_key
+        target: rancher_secret_key
+    when:
+      event: tag
+    # --------------
+
+  slack:
+    image: plugins/slack
+    webhook: https://hooks.slack.com/services/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
+    channel: builds
+    template: Build {{build.number}} failed!
+    when:
+      status: failure

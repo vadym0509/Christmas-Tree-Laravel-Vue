@@ -1,0 +1,95 @@
+.login {
+    padding-top: 49px;
+    padding-bottom: 50px;
+    background: #edece7;
+
+    &_content {
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: 767px) {
+            flex-direction: column;
+        }
+    }
+
+    &_errors {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding-bottom: 50px;
+
+        p {
+            font-weight: bold;
+            color: rgba(177, 30, 42, 1);
+        }
+    }
+
+    &_form {
+        width: 413px;
+        max-width: calc(50% - 15px);
+        background: #ffffff;
+        padding: 27px 32px 47px;
+
+        @media screen and (max-width: 767px) {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        @media screen and (max-width: 599px) {
+            padding: 20px 15px;
+        }
+
+        &-auth {
+
+            @media screen and (max-width: 767px) {
+                margin-bottom: 30px;
+            }
+        }
+
+        &_heading {
+            font-size: 30px;
+            color: #1b353d;
+            line-height: 36px;
+            font-family: "Taviraj-Regular", sans-serif;
+            padding: 8px 0;
+            border-bottom: 2px solid #1b353d;
+            margin-bottom: 30px;
+
+            @media screen and (max-width: 599px) {
+                font-size: 26px;
+            }
+        }
+    }
+
+    &_input {
+        display: block;
+        margin-bottom: 13px;
+        border: 1px solid #edece7;
+        padding: 15px 18px 11px;
+        font-size: 14px;
+        font-family: "Muli-Light", sans-serif;
+        color: #1b353d;
+        line-height: 19px;
+        width: 100%;
+
+        &_error {
+            border: 1.5px solid rgba(177, 30, 42, 0.7);
+        }
+    }
+
+    .cta {
+        margin-top: 16px;
+    }
+
+    &_forgot {
+        display: block;
+        font-size: 14px;
+        font-family: "Muli-Light", sans-serif;
+        color: #1b353d;
+        text-align: center;
+        line-height: 22px;
+        margin: 9px 0 0;
+    }
+}
